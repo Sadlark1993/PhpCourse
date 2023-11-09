@@ -41,6 +41,14 @@
   <?php
   //this function displays the value and its type
   var_dump($age);
+
+  const MY_CONSTANT = "This is a constant" . " :)"; //Concatenation
+  echo MY_CONSTANT;
+
+  $var = 'hallo, ';
+  $var .= MY_CONSTANT;
+  echo "<br>";
+  echo $var;
   ?>
   <p>
 
