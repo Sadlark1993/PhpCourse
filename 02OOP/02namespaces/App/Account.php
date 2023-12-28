@@ -2,11 +2,20 @@
 
 declare(strict_types=1);
 
-//namespaces are just like directories created in compiling time
 namespace App;
+
+//importing class with an alias
+use DateTime as DT;
+
+new DT();
+
+//to access methods from the global namespace, you need to add a backslash at the start of the methods name.
+//or, you can 'use DateTime;'
+//new \DateTime();
 
 class Account
 {
+  public SocialMedia $socialMedia;
   public string $name;
   public float $balance;
 
@@ -19,6 +28,7 @@ class Account
   {
     $this->name = $name;
     $this->balance = $balance;
+    $this->socialMedia = new SocialMedia();
   }
 
   public function deposit(float $amount)

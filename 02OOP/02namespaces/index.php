@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-require_once 'Account.php';
-require_once 'PropertyPromotion.php';
+require_once 'App/Account.php';
 
 //importing Account class from the namespace directory App. (remember that it's backslash)
-use App\Account;
+use App\{Account, SocialMedia};
 
 $myAccount = new Account('Junior', 9.5);
 $johnsAccount = new PropertyPromotion('John', 4.8);
