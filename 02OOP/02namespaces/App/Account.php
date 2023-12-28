@@ -18,6 +18,7 @@ class Account
   public SocialMedia $socialMedia;
   public string $name;
   public float $balance;
+  public const INTEREST_RATE = 2;
 
   /* 
   * Magic methods are special methods which override PHP's default's action when certain actions are performed on an object.
