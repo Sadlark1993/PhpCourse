@@ -17,4 +17,10 @@ class Account
     $this->name = $name;
     $this->balance = $balance;
   }
+
+  public function deposit(float $amount)
+  {
+    $this->balance += $amount;
+    return $this; //method chaining
+  }
 }
