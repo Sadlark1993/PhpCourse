@@ -2,7 +2,17 @@
 
 declare(strict_types=1);
 
-require_once 'App/Account.php';
+//not necessary, cuz we are using class autoloader
+//require_once 'App/Account.php';
+//require_once 'App/SocialMedia.php';
+
+//class autoloader
+spl_autoload_register(function ($class) {
+  $formattedClass = str_replace("\\", "/", $class);
+  $path = "{$formattedClass}.php";
+
+  require_once $path;
+});
 
 //importing Account class from the namespace directory App. (remember that it's backslash)
 use App\{Account, SocialMedia};
