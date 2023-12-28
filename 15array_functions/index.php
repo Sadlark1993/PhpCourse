@@ -12,7 +12,26 @@ if (array_key_exists(3, $users)) {
 
 //usually, the array_filter function removes nulls and '' values from the array. But we can insert a callback function to adjust this.
 $users = array_filter($users, fn ($user) => $user !== 'Bob');
+$users = array_filter($users);
 print_r($users);
+
+$numbers2 = array(
+  "one" => "um",
+  "two" => "dois",
+  "three" => "tres",
+  "four" => "quatro"
+);
+
+$numbers = $numbers2;
+
+unset($numbers['two']);
+echo "\n\n sem o dois: ";
+print_r($numbers);
+
+echo "\n\n com o dois: ";
+print_r($numbers2);
+
+
 
 $users = array_map(fn ($user) => strtoupper($user), $users);
 print_r($users);

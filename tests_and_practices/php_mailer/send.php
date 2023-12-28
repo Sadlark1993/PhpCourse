@@ -6,23 +6,23 @@ use PHPMailer\PHPMailer\PHPMailer;
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
-require 'secret.php';
+//include 'secret.php';
 
 $email = new PHPMailer(true);
 
 $email->isSMTP();
-$email->Host = SECRET_SERVER;
+$email->Host = 'smtplw.com.br';
 $email->SMTPAuth = true;
-$email->Username = SECRET_USER;
-$email->Password = SECRET_PASS;
+$email->Username = 'megalinklinhares';
+$email->Password = 'Mega123@@2020';
 //$email->SMTPSecure = 'ssl';
 $email->Port = 587;
 
-$email->setFrom(SECRET_EMAIL);
+$email->setFrom('no_reply@megalink.net.br', 'MEGALINK');
 
 $email->addAddress('claudio.zi.junior@gmail.com');
 $email->isHTML(true);
-$email->Subject = 'Email de teste';
+$email->Subject = '[EMAIL TESTANDOOO]   Email de teste';
 $email->Body = 'corpo do email. Testando...';
 
 $email->send();
