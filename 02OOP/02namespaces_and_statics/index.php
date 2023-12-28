@@ -15,7 +15,7 @@ spl_autoload_register(function ($class) {
 });
 
 //importing Account class from the namespace directory App. (remember that it's backslash)
-use App\{Account, SocialMedia};
+use App\{Account, SocialMedia, Utility};
 
 $myAccount = new Account('Junior', 9.5);
 
@@ -30,3 +30,6 @@ echo $myAccount::INTEREST_RATE . "\n";
 
 //PHP allows to access a class constant without a instance:
 echo Account::INTEREST_RATE . "\n";
+echo Account::$count . "\n";
+
+Utility::printArr([5, 8, 30]);

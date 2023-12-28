@@ -19,6 +19,7 @@ class Account
   public string $name;
   public float $balance;
   public const INTEREST_RATE = 2;
+  public static int $count = 0; //will store the number of instances where created from this class
 
   /* 
   * Magic methods are special methods which override PHP's default's action when certain actions are performed on an object.
@@ -30,6 +31,9 @@ class Account
     $this->name = $name;
     $this->balance = $balance;
     $this->socialMedia = new SocialMedia();
+
+    //this refers to the object, self refers to the class.
+    self::$count++;
   }
 
   public function deposit(float $amount)
