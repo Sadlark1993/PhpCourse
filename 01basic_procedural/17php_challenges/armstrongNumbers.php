@@ -20,8 +20,9 @@ function isArmstrongNumber(int $number): bool
 {
   $digits = str_split((string)$number);
   $sum = 0;
+  $length = sizeOf($digits);
   foreach ($digits as $value) {
-    $sum += pow(((int)$value), sizeof($digits));
+    $sum += pow(((int)$value), $length);
   }
 
   if ($sum == $number) return true;
