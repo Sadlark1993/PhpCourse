@@ -10,6 +10,17 @@ spl_autoload_register(function ($class) {
   require_once $path;
 });
 
+use App\EmptyArrayException;
 use App\Utility;
 
-Utility::printArr([]);
+try {
+  Utility::printArr([]);
+} catch (InvalidArgumentException | EmptyArrayException $e) {
+  echo "Exception: {$e->getMessage()}\n";
+} catch (Exception $e) {
+  echo "Default exception: {$e->getMessage()}\n";
+} finally {
+  echo "Finally block\n";
+}
+
+echo "Finished Script\n";
