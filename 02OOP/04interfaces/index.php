@@ -10,8 +10,9 @@ spl_autoload_register(function ($class) {
   require_once $path;
 });
 
-use App\RestaurantOne;
+use App\{RestaurantOne, RestaurantTwo, FoodApp};
 
-$restaurant = new RestaurantOne();
-$restaurant->prepareFood();
+new FoodApp(new RestaurantOne);
+echo "\n";
+new FoodApp(new RestaurantTwo);
 echo "\n";
