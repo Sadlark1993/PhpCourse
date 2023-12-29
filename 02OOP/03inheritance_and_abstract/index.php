@@ -2,7 +2,7 @@
 
 use App\ToasterPremium;
 
-require_once "ToasterPremium.php";
+require_once "App/ToasterPremium.php";
 
 $myToaster = new ToasterPremium();
 $myToaster->toast();
